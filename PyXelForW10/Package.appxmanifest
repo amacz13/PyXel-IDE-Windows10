@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap mp rescap">
+  <Identity Name="31604InformatiqueNet.PyXel" Publisher="CN=C040CD88-02D9-4A8D-9ED0-3E92E6137E9D" Version="0.3.1.0" />
+  <Properties>
+    <DisplayName>PyXel</DisplayName>
+    <PublisherDisplayName>Axel Maczkowiak</PublisherDisplayName>
+    <Logo>Images\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.14393.0" MaxVersionTested="10.0.14393.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="$targetentrypoint$">
+      <uap:VisualElements DisplayName="PyXel IDE" Description="PyXel est un environnement de développement intégré (EDI ou IDE en anglais) moderne, léger et open-source. Cette version de PyXel a été conçue spécialement pour les ordinateur exécutant Windows 10 (S) et est distribuée uniquement dans le Windows Store." BackgroundColor="#884BDF" Square150x150Logo="Images\Square150x150Logo.png" Square44x44Logo="Images\Square44x44Logo.png">
+        <uap:DefaultTile Wide310x150Logo="Images\Wide310x150Logo.png" Square310x310Logo="Images\LargeTile.png" Square71x71Logo="Images\SmallTile.png" ShortName="PyXel">
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Images\SplashScreen.png" BackgroundColor="#884BDF" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+  <Capabilities>
+    <Capability Name="internetClient" />
+    <rescap:Capability Name="runFullTrust" />
+  </Capabilities>
+</Package>

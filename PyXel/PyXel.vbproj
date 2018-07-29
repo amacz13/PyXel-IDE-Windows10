@@ -1,0 +1,450 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A69B3A66-E67F-4780-88B0-7A1134421E98}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>PyXel.My.MyApplication</StartupObject>
+    <RootNamespace>PyXel</RootNamespace>
+    <AssemblyName>PyXel</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>PyXel.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>PyXel.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Pyxel Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DocumentationFile>PyXel.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DocumentationFile>PyXel.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>PyXel.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>PyXel.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>PyXel_Key.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>false</DelaySign>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>7A238F474ED143DE64D3E9254575A9A1D7761604</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>PyXel_Key.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComponentFactory.Krypton.Design, Version=4.5.0.0, Culture=neutral, PublicKeyToken=a87e673e9ecb6e8e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\ComponentFactory.Krypton.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="ConsoleControl">
+      <HintPath>.\ConsoleControl.dll</HintPath>
+    </Reference>
+    <Reference Include="FastColoredTextBox, Version=2.16.23.0, Culture=neutral, PublicKeyToken=fb8aa12b994ef61b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\FastColoredTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Jacksonsoft.CustomTabControl, Version=1.0.1.5, Culture=neutral, PublicKeyToken=53c237210c7e462d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Jacksonsoft.CustomTabControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton Docking">
+      <HintPath>.\Krypton Docking.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton Navigator">
+      <HintPath>.\Krypton Navigator.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton Ribbon">
+      <HintPath>.\Krypton Ribbon.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton Toolkit">
+      <HintPath>.\Krypton Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Krypton Workspace">
+      <HintPath>.\Krypton Workspace.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="VistaUIFramework">
+      <HintPath>.\VistaUIFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\AutoCompleteTools.vb" />
+    <Compile Include="Classes\File.vb" />
+    <Compile Include="Classes\Project.vb" />
+    <Compile Include="Forms\About.Designer.vb">
+      <DependentUpon>About.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\About.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Classes\ApplicationSettings.vb" />
+    <Compile Include="Forms\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Help.Designer.vb">
+      <DependentUpon>Help.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Help.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\NewProjectWizard.Designer.vb">
+      <DependentUpon>NewProjectWizard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\NewProjectWizard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Forms\Settings.Designer.vb">
+      <DependentUpon>Settings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Splash.Designer.vb">
+      <DependentUpon>Splash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Splash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\About.resx">
+      <DependentUpon>About.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Help.resx">
+      <DependentUpon>Help.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NewProjectWizard.resx">
+      <DependentUpon>NewProjectWizard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings.resx">
+      <DependentUpon>Settings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Splash.resx">
+      <DependentUpon>Splash.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PyXelKey.pfx" />
+    <None Include="PyXel_Key.pfx" />
+    <None Include="Resources\new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\console.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\run.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\run16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\comment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ComponentFactory.Krypton.Design.dll" />
+    <Content Include="ComponentFactory.Krypton.Docking.dll" />
+    <Content Include="ComponentFactory.Krypton.Navigator.dll" />
+    <Content Include="ComponentFactory.Krypton.Ribbon.dll" />
+    <Content Include="ComponentFactory.Krypton.Toolkit.dll" />
+    <Content Include="ComponentFactory.Krypton.Workspace.dll" />
+    <Content Include="FastColoredTextBox.dll" />
+    <Content Include="icon.ico" />
+    <Content Include="Jacksonsoft.CustomTabControl.dll" />
+    <Content Include="Licence.txt" />
+    <Content Include="logo.ico" />
+    <Content Include="Pyxel Icon.ico" />
+    <None Include="Resources\keyword.png" />
+    <None Include="Resources\function.png" />
+    <None Include="Resources\snippet.png" />
+    <None Include="Resources\PyXel SplashScreen 0.4.png" />
+    <None Include="Resources\pyxel1.png" />
+    <None Include="Resources\PyXelNewProjWiz.png" />
+    <None Include="Resources\edge.png" />
+    <None Include="Resources\close1.png" />
+    <None Include="Resources\redo.png" />
+    <None Include="Resources\undo.png" />
+    <None Include="Resources\project161.png" />
+    <None Include="Resources\header16.png" />
+    <None Include="Resources\c++16.png" />
+    <None Include="Resources\c16.png" />
+    <None Include="Resources\php16.png" />
+    <None Include="Resources\js16.png" />
+    <None Include="Resources\css16.png" />
+    <None Include="Resources\html161.png" />
+    <None Include="Resources\python16.png" />
+    <None Include="Resources\project16.png" />
+    <None Include="Resources\onedrive16.png" />
+    <None Include="Resources\ftp16.png" />
+    <None Include="Resources\mail16.png" />
+    <None Include="Resources\html16.png" />
+    <None Include="Resources\word16.png" />
+    <None Include="Resources\pdf16.png" />
+    <None Include="Resources\send32.png" />
+    <None Include="Resources\export32.png" />
+    <None Include="Resources\import32.png" />
+    <None Include="Resources\project.png" />
+    <None Include="Resources\run-and-compile.png" />
+    <None Include="Resources\compile.png" />
+    <None Include="Resources\opera.png" />
+    <None Include="Resources\chrome.png" />
+    <None Include="Resources\firefox.png" />
+    <None Include="Resources\ie.png" />
+    <None Include="Resources\collapse.png" />
+    <None Include="Resources\update16.png" />
+    <None Include="Resources\open16.png" />
+    <None Include="Resources\save161.png" />
+    <None Include="Resources\new161.png" />
+    <None Include="Resources\help161.png" />
+    <None Include="Resources\help2.png" />
+    <None Include="Resources\quit16.png" />
+    <None Include="Resources\about16.png" />
+    <None Include="Resources\settings32.png" />
+    <None Include="Resources\print32.png" />
+    <None Include="Resources\html321.png" />
+    <None Include="Resources\save321.png" />
+    <None Include="Resources\open321.png" />
+    <None Include="Resources\new321.png" />
+    <None Include="Resources\about.png" />
+    <None Include="Resources\quit.png" />
+    <None Include="Resources\help1.png" />
+    <None Include="Resources\dictionnary.png" />
+    <None Include="Resources\check.png" />
+    <None Include="Resources\stop.png" />
+    <None Include="Resources\console1.png" />
+    <None Include="Resources\goto.png" />
+    <None Include="Resources\run1.png" />
+    <None Include="Resources\replace.png" />
+    <None Include="Resources\find.png" />
+    <None Include="Resources\unpin.png" />
+    <None Include="Resources\pin.png" />
+    <None Include="Resources\comment1.png" />
+    <None Include="Resources\paste1.png" />
+    <None Include="Resources\copy1.png" />
+    <None Include="Resources\cut1.png" />
+    <None Include="Resources\splash alpha0.3.png" />
+    <None Include="Resources\html32.png" />
+    <None Include="Resources\html.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\console16.png" />
+    <None Include="Resources\new16.png" />
+    <None Include="Resources\splash-new.png" />
+    <None Include="Resources\splash-alpha.png" />
+    <None Include="Resources\splash3.png" />
+    <None Include="Resources\splash2.png" />
+    <None Include="Resources\eraser.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\help16.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\logo16.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\dictionary.png" />
+    <None Include="Resources\verify.png" />
+    <None Include="Resources\splash.png" />
+    <None Include="Resources\paste.png" />
+    <None Include="Resources\copy.png" />
+    <None Include="Resources\cut.png" />
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+</Project>
