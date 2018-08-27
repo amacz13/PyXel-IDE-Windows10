@@ -26,14 +26,14 @@ Public Class Project
         Dim dir As String = Path.GetDirectoryName(filePath)
         Dim project As New Project(filePath, projectName, dir)
 
-        Dim ProjectNode As TreeNode = Form1.KryptonTreeView1.Nodes.Add(projectName)
+        Dim ProjectNode As TreeNode = MainForm.KryptonTreeView1.Nodes.Add(projectName)
         ProjectNode.ImageKey = "project"
         ProjectNode.SelectedImageKey = "project"
         ProjectNode.StateImageKey = "project"
         project.projectNode = ProjectNode
         LoadDirectory(dir, project)
-        Form1.KryptonSplitContainer2.Panel1Collapsed = False
-        Form1.KryptonRibbon1.SelectedContext += ",Projet"
+        MainForm.KryptonSplitContainer2.Panel1Collapsed = False
+        'MainForm.KryptonRibbon1.SelectedContext += ",Projet"
         Return project
     End Function
 
@@ -54,10 +54,10 @@ Public Class Project
             tds.StateImageKey = "folder"
             tds.SelectedImageKey = "folder"
             tds.Tag = di.FullName
-            Dim menu As New ContextMenuStrip
-            menu.Items.Add(New ToolStripMenuItem("Nouveau Fichier"))
-            menu.Items.Add(New ToolStripMenuItem("Nouveau Dossier"))
-            tds.ContextMenuStrip = menu
+            'Dim menu As New ContextMenuStrip
+            'Menu.Items.Add(New ToolStripMenuItem("Nouveau Fichier"))
+            'menu.Items.Add(New ToolStripMenuItem("Nouveau Dossier"))
+            'tds.ContextMenuStrip = menu
             LoadSubDirectories(subdirectory, tds)
             LoadFiles(subdirectory, tds)
         Next
@@ -79,6 +79,10 @@ Public Class Project
                     tds.ImageKey = "html"
                     tds.StateImageKey = "html"
                     tds.SelectedImageKey = "html"
+                Case ".xml"
+                    tds.ImageKey = "xml"
+                    tds.StateImageKey = "xml"
+                    tds.SelectedImageKey = "xml"
                 Case ".js"
                     tds.ImageKey = "js"
                     tds.StateImageKey = "js"
@@ -103,11 +107,14 @@ Public Class Project
                     tds.ImageKey = "h"
                     tds.StateImageKey = "h"
                     tds.SelectedImageKey = "h"
+                Case ".png", ".bmp", ".jpg", ".jpeg", ".gif", ".tif"
+                    tds.ImageKey = "img"
+                    tds.StateImageKey = "img"
+                    tds.SelectedImageKey = "img"
                 Case Else
                     tds.ImageKey = "file"
                     tds.StateImageKey = "file"
                     tds.SelectedImageKey = "file"
-
             End Select
         Next
     End Sub

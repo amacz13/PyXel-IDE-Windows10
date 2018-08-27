@@ -197,6 +197,7 @@
     <Compile Include="Classes\AutoCompleteTools.vb" />
     <Compile Include="Classes\File.vb" />
     <Compile Include="Classes\Project.vb" />
+    <Compile Include="Classes\PyXelTranslations.vb" />
     <Compile Include="Forms\About.Designer.vb">
       <DependentUpon>About.vb</DependentUpon>
     </Compile>
@@ -205,11 +206,11 @@
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="Classes\ApplicationSettings.vb" />
-    <Compile Include="Forms\Form1.vb">
+    <Compile Include="Forms\MainForm.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Forms\MainForm.Designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Help.Designer.vb">
@@ -222,6 +223,12 @@
       <DependentUpon>NewProjectWizard.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\NewProjectWizard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PictureViewer.Designer.vb">
+      <DependentUpon>PictureViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PictureViewer.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -256,14 +263,17 @@
     <EmbeddedResource Include="Forms\About.resx">
       <DependentUpon>About.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Help.resx">
       <DependentUpon>Help.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NewProjectWizard.resx">
       <DependentUpon>NewProjectWizard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PictureViewer.resx">
+      <DependentUpon>PictureViewer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -279,6 +289,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="lang\English">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="lang\French">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="My Project\app.manifest">
       <SubType>Designer</SubType>
     </None>
@@ -342,11 +358,35 @@
     <Content Include="ComponentFactory.Krypton.Toolkit.dll" />
     <Content Include="ComponentFactory.Krypton.Workspace.dll" />
     <Content Include="FastColoredTextBox.dll" />
+    <Content Include="help\English\welcome.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="help\French\welcome.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="icon.ico" />
     <Content Include="Jacksonsoft.CustomTabControl.dll" />
     <Content Include="Licence.txt" />
     <Content Include="logo.ico" />
     <Content Include="Pyxel Icon.ico" />
+    <None Include="Resources\xml16.png" />
+    <None Include="Resources\undo16.png" />
+    <None Include="Resources\redo16.png" />
+    <None Include="Resources\checkbox.png" />
+    <None Include="Resources\picture.png" />
+    <None Include="Resources\link.png" />
+    <None Include="Resources\list-nb.png" />
+    <None Include="Resources\list.png" />
+    <None Include="Resources\underline.png" />
+    <None Include="Resources\italic.png" />
+    <None Include="Resources\bold.png" />
+    <None Include="Resources\vsts.png" />
+    <None Include="Resources\gitlab.png" />
+    <None Include="Resources\github.png" />
+    <None Include="Resources\warning24.png" />
+    <None Include="Resources\warning.png" />
+    <None Include="Resources\add-folder.png" />
+    <None Include="Resources\add-file.png" />
     <None Include="Resources\keyword.png" />
     <None Include="Resources\function.png" />
     <None Include="Resources\snippet.png" />

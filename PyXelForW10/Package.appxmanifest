@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities" IgnorableNamespaces="uap mp rescap">
-  <Identity Name="31604InformatiqueNet.PyXel" Publisher="CN=C040CD88-02D9-4A8D-9ED0-3E92E6137E9D" Version="0.3.1.0" />
+  <Identity Name="31604InformatiqueNet.PyXel" Publisher="CN=C040CD88-02D9-4A8D-9ED0-3E92E6137E9D" Version="0.4.1.0" />
   <Properties>
     <DisplayName>PyXel</DisplayName>
     <PublisherDisplayName>Axel Maczkowiak</PublisherDisplayName>

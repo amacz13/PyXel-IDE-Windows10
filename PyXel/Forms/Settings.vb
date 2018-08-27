@@ -3,34 +3,16 @@ Imports ComponentFactory.Krypton.Toolkit
 Imports MyAPKapp.VistaUIFramework.TaskDialog
 
 Public Class Settings
-    Private Sub KryptonButton1_Click(sender As Object, e As EventArgs) Handles KryptonButton1.Click
-        Dim openFileDialog1 As New OpenFileDialog()
-        openFileDialog1.Filter = "Fichiers Executables|*.exe"
-        openFileDialog1.Title = "Sélectionnez l'emplacement de l'executable Python 2"
-        If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
-            Dim fn As String = openFileDialog1.FileName
-            ApplicationSettings.python2 = fn
-            KryptonTextBox1.Text = fn
-        End If
-    End Sub
-
-    Private Sub KryptonButton2_Click(sender As Object, e As EventArgs) Handles KryptonButton2.Click
-        Dim openFileDialog1 As New OpenFileDialog()
-        openFileDialog1.Filter = "Fichiers Executables|*.exe"
-        openFileDialog1.Title = "Sélectionnez l'emplacement de l'executable Python 3"
-        If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
-            Dim fn As String = openFileDialog1.FileName
-            ApplicationSettings.python3 = fn
-            KryptonTextBox2.Text = fn
-        End If
-    End Sub
-
-
 
     Private Sub Settings_Load(sender As Object, e As EventArgs) Handles Me.Load
         Me.TextExtra = My.Settings.Version
         KryptonTextBox1.Text = ApplicationSettings.python2
         KryptonTextBox2.Text = ApplicationSettings.python3
+        KryptonTextBox6.Text = ApplicationSettings.projectsPath
+        KryptonTextBox3.Text = ApplicationSettings.firefox
+        KryptonTextBox4.Text = ApplicationSettings.chrome
+        KryptonTextBox5.Text = ApplicationSettings.opera
+        KryptonTextBox7.Text = ApplicationSettings.gcc
         If ApplicationSettings.theme = ComponentFactory.Krypton.Toolkit.PaletteMode.Office2010Blue Then
             KryptonRadioButton1.Checked = True
             KryptonRadioButton2.Checked = False
@@ -79,8 +61,21 @@ Public Class Settings
             KryptonRadioButton8.Checked = True
         End If
 
+        KryptonRadioButton4.Visible = False
+        KryptonRadioButton5.Visible = False
+        KryptonRadioButton6.Visible = False
+        KryptonRadioButton7.Visible = False
+        KryptonRadioButton8.Visible = False
+        KryptonLabel4.Visible = False
+        KryptonLabel8.Visible = False
 
-        KryptonComboBox1.SelectedText = "Français"
+        Select Case ApplicationSettings.lang
+            Case "French"
+                KryptonComboBox1.SelectedText = "Français"
+            Case "English"
+                KryptonComboBox1.SelectedText = "English"
+        End Select
+
 
         KryptonColorButton1.SelectedColor = ApplicationSettings.editorBackColor
         KryptonColorButton2.SelectedColor = ApplicationSettings.editorForeColor
@@ -117,7 +112,7 @@ Public Class Settings
     End Sub
 
     Private Sub UpdatePalettes()
-        Form1.updatePalette()
+        MainForm.updatePalette()
         Help.updatePalette()
     End Sub
 
@@ -142,22 +137,22 @@ Public Class Settings
 
     Private Sub KryptonColorButton1_SelectedColorChanged(sender As Object, e As ColorEventArgs) Handles KryptonColorButton1.SelectedColorChanged
         ApplicationSettings.editorBackColor = e.Color
-        Form1.updateEditors()
+        MainForm.updateEditors()
     End Sub
 
     Private Sub KryptonColorButton2_SelectedColorChanged(sender As Object, e As ColorEventArgs) Handles KryptonColorButton2.SelectedColorChanged
         ApplicationSettings.editorForeColor = e.Color
-        Form1.updateEditors()
+        MainForm.updateEditors()
     End Sub
 
     Private Sub KryptonColorButton4_SelectedColorChanged(sender As Object, e As ColorEventArgs) Handles KryptonColorButton4.SelectedColorChanged
         ApplicationSettings.interpreterBackColor = e.Color
-        Form1.ConsoleControl1.BackColor = e.Color
+        MainForm.ConsoleControl1.BackColor = e.Color
     End Sub
 
     Private Sub KryptonColorButton3_SelectedColorChanged(sender As Object, e As ColorEventArgs) Handles KryptonColorButton3.SelectedColorChanged
         ApplicationSettings.interpreterForeColor = e.Color
-        Form1.ConsoleControl1.ForeColor = e.Color
+        MainForm.ConsoleControl1.ForeColor = e.Color
     End Sub
 
     Private Sub Settings_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
@@ -199,7 +194,7 @@ Public Class Settings
             Dim underline As Boolean = selFont.Underline
             Dim size As Integer = selFont.SizeInPoints
             ApplicationSettings.interpreterFont = selFont
-            Form1.ConsoleControl1.Font = selFont
+            MainForm.ConsoleControl1.Font = selFont
         End If
     End Sub
 
@@ -215,7 +210,7 @@ Public Class Settings
             Dim underline As Boolean = selFont.Underline
             Dim size As Integer = selFont.SizeInPoints
             ApplicationSettings.editorFont = selFont
-            Form1.updateEditors()
+            MainForm.updateEditors()
         End If
     End Sub
 
@@ -243,5 +238,79 @@ Public Class Settings
     Private Sub KryptonRadioButton8_Click(sender As Object, e As EventArgs) Handles KryptonRadioButton8.Click
         ApplicationSettings.updateType = "Disabled"
     End Sub
+    Private Sub KryptonButton1_Click(sender As Object, e As EventArgs) Handles KryptonButton1.Click
+        Dim openFileDialog1 As New OpenFileDialog()
+        openFileDialog1.Filter = "Fichiers Executables|*.exe"
+        openFileDialog1.Title = "Sélectionnez l'emplacement de l'executable Python 2"
+        If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            Dim fn As String = openFileDialog1.FileName
+            ApplicationSettings.python2 = fn
+            KryptonTextBox1.Text = fn
+        End If
+    End Sub
 
+    Private Sub KryptonButton2_Click(sender As Object, e As EventArgs) Handles KryptonButton2.Click
+        Dim openFileDialog1 As New OpenFileDialog()
+        openFileDialog1.Filter = "Fichiers Executables|*.exe"
+        openFileDialog1.Title = "Sélectionnez l'emplacement de l'executable Python 3"
+        If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            Dim fn As String = openFileDialog1.FileName
+            ApplicationSettings.python3 = fn
+            KryptonTextBox2.Text = fn
+        End If
+    End Sub
+
+    Private Sub KryptonButton8_Click(sender As Object, e As EventArgs) Handles KryptonButton8.Click
+        Dim openFileDialog1 As New FolderBrowserDialog()
+        openFileDialog1.Description = "Emplacement par défaut de création des projets"
+        If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            Dim fn As String = openFileDialog1.SelectedPath
+            ApplicationSettings.projectsPath = fn
+            KryptonTextBox6.Text = fn
+        End If
+    End Sub
+
+    Private Sub KryptonButton3_Click(sender As Object, e As EventArgs) Handles KryptonButton3.Click
+        Dim openFileDialog1 As New OpenFileDialog()
+        openFileDialog1.Filter = "Fichiers Executables|*.exe"
+        openFileDialog1.Title = "Sélectionnez l'emplacement de Mozilla Firefox"
+        If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            Dim fn As String = openFileDialog1.FileName
+            ApplicationSettings.firefox = fn
+            KryptonTextBox3.Text = fn
+        End If
+    End Sub
+
+    Private Sub KryptonButton6_Click(sender As Object, e As EventArgs) Handles KryptonButton6.Click
+        Dim openFileDialog1 As New OpenFileDialog()
+        openFileDialog1.Filter = "Fichiers Executables|*.exe"
+        openFileDialog1.Title = "Sélectionnez l'emplacement de Chrome"
+        If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            Dim fn As String = openFileDialog1.FileName
+            ApplicationSettings.chrome = fn
+            KryptonTextBox4.Text = fn
+        End If
+    End Sub
+
+    Private Sub KryptonButton7_Click(sender As Object, e As EventArgs) Handles KryptonButton7.Click
+        Dim openFileDialog1 As New OpenFileDialog()
+        openFileDialog1.Filter = "Fichiers Executables|*.exe"
+        openFileDialog1.Title = "Sélectionnez l'emplacement d'Opera"
+        If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            Dim fn As String = openFileDialog1.FileName
+            ApplicationSettings.opera = fn
+            KryptonTextBox5.Text = fn
+        End If
+    End Sub
+
+    Private Sub KryptonButton9_Click(sender As Object, e As EventArgs) Handles KryptonButton9.Click
+        Dim openFileDialog1 As New OpenFileDialog()
+        openFileDialog1.Filter = "Fichiers Executables|*.exe"
+        openFileDialog1.Title = "Sélectionnez l'emplacement du compilateur GCC"
+        If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
+            Dim fn As String = openFileDialog1.FileName
+            ApplicationSettings.gcc = fn
+            KryptonTextBox7.Text = fn
+        End If
+    End Sub
 End Class
